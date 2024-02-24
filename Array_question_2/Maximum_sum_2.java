@@ -1,7 +1,7 @@
 package Array_question_2;
 
 public class Maximum_subarray_sum_1 {
-public int GetSum(int [] arr, int s, int e){
+public  static int GetSum(int [] arr, int s, int e){
         
         int sum=0;
         
@@ -12,7 +12,7 @@ public int GetSum(int [] arr, int s, int e){
         System.out.println();
         return sum;
     }
-    public int maxSubArray(int[] arr) {
+    public  static int maxSubArray(int[] arr) {
        
      int overall_max_sum= Integer.MIN_VALUE;
      for(int s=0;s<arr.length;s++){
