@@ -14,8 +14,7 @@ public class PrintArrayINRange {
 		// TODO Auto-generated method stub
       int [] arr= {1,2,3,4,5};
       
-       for(int start=0; start<arr.length;start++) {
-    	   
+       for(int start=0; start<arr.length;start++) {  	   
     	   for(int end=start; end<arr.length; end++) {
     		   
     		   System.out.println(" cut is from "+start+ " to "+ end);
