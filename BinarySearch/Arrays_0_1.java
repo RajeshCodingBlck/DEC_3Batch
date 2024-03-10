@@ -11,8 +11,7 @@ public class Arrays_0_1 {
 		while(low<=high) {	
 			int mid= (low+high)/2;
 			
-			if(arr[mid]==0) {
-				
+			if(arr[mid]==0) {		
 				low=mid+1;
 			}else {
 				high=mid-1;
@@ -24,7 +23,7 @@ public class Arrays_0_1 {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-       int [] arr= {0,0,0,0};
+       int [] arr= {0,0,0,1,1,1,1,1,1,1};
        
        System.out.println(Minimum_index_1(arr));
        
