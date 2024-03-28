@@ -13,7 +13,6 @@ public class Sort_the_String {
 		}
 		
 		String sorted_string="";
-		
 		for(int i=0; i<256;i++) {
 			
 		     if(fre_array[i]>0) {
