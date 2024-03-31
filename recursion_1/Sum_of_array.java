@@ -25,6 +25,6 @@ public class Sum_of_array {
           int ans= Sum_of_array(arr, arr.length);
           System.out.println(ans);
           
-	}
+	 }
 
 }
