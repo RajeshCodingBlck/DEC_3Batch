@@ -2,40 +2,52 @@ package MyStack;
 
 public class Stack {
     
-	 private int [] arr;
-	 private int top;
+	 protected int [] arr;
+	 protected int top;
 	 
-	 Stack(int size){
+	 public Stack(int size){
 		 
 		 arr= new int[size];
 		 top=0;
 	 }
 	 
-	 public void push(int val) {
+	 public void push(int val) throws Exception {
 		 
 		  if(top== arr.length) {
-			  System.out.println("Bhai Kyu Dal raha he");
+//			  System.out.println("Bhai Kyu Dal raha he");
+			  
+			 try {
+				 
+				 throw  new Exception("Bhai Kyu Dal raha he");
+			 }catch(Exception e1) {
+				 
+				 System.out.println(e1);
+				 
+			 }
+			 
 		  }else {
 			  arr[top]=val;
 			  top++;
 		  }
 	 }
 	 
-	 public void pop() {
+	 public void pop()  throws Exception{
 		 
 		  if(top==0) {
-			  System.out.println("Bhai Kyu Nikal raha he");
+//			  System.out.println("Bhai Kyu Nikal raha he");
+			  
+			  throw new Exception("Bhai Kyu Nikal raha he");
 		  }else {
 			  top--;
 		  }
 	 }
 	 
-	 public int peek() {
+	 public int peek() throws Exception {
 		 
 		 if(top==0) {
-			 
-			System.out.println("Bhai kyu Dekh raha he");
-			return -1;
+			
+			 throw new Exception("Bhai Kyu dekh raha he");
+			
 		 }else {
 			 
 			 int ans= arr[top-1];

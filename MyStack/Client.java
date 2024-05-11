@@ -2,7 +2,7 @@ package MyStack;
 
 public class Client {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
         Stack mystack= new Stack(5);
         
@@ -11,7 +11,8 @@ public class Client {
         mystack.push(30);
         mystack.push(40);
         mystack.push(50);
-        
+        System.out.println(mystack.size());
+        mystack.push(60);
         System.out.println(mystack.size());
         mystack.pop();
         mystack.pop();
