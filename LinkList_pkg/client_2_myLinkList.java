@@ -32,6 +32,9 @@ public class client_2_myLinkList {
 	  list.deleteAtBegin();
 	  System.out.println();
 	  list.display();
+	  
+	  System.out.println(list.head);
+	  
 	}
 
 }

@@ -75,9 +75,72 @@ public class MyLinkList {
 			
 			temp=temp.next;
 		}	
-		temp.next=null;
+		temp.next=null;	
+	}
+	
+	public void InsertAtIndex(int val, int index) {
 		
+		if(index==0) {
+			
+			insertAtStart(val);
+			return ;
+		}
+		int jump=index-1;
+		Node temp= head;
+		
+		while(jump>0) {
+			
+			temp=temp.next;
+			jump--;
+		}
+		
+		Node new_node= new Node(val);
+		new_node.next= temp.next;
+		temp.next=new_node;	
+	}
+	
+	public void deleteAtIndex(int index) {
+		
+		int jump=index-1;
+		Node temp= head;
+		
+		while(jump>0) {
+			
+			temp=temp.next;
+			jump--;
+		}
+		
+		Node temp2= temp.next;
+		temp.next=temp2.next;
+		temp2.next=null;		
+	}
+	
+	public int getAtIndex(int index) {
+		
+		int jump=index;
+		Node temp= head;
+		
+		while(jump>0) {
+			temp=temp.next;
+			jump--;
+		}
+		
+		return temp.data;
+	}
+	
+	public void set(int index, int new_val) {
+		
+		int jump=index;
+		Node temp= head;
+		
+		while(jump>0) {
+			temp=temp.next;
+			jump--;
+		}
+		
+		 temp.data=new_val;
 		
 	}
+	
 	
 }
