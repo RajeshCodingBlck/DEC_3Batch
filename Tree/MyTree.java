@@ -18,7 +18,7 @@ public class MyTree {
 	   if(data==-1) {
 		   return null;
 	   }
-	   
+	   // Work is Creating the Root Node.
 	   TreeNode root= new TreeNode(data);
 	   
 	   System.out.println("Enter the Left child "+ data);
@@ -34,8 +34,29 @@ public class MyTree {
 	   
 	}
 	
-	void preOrder(TreeNode root) {
+	void PostOrder(TreeNode root) {
+		if(root==null) {
+			return;
+		}
 		
+		PostOrder(root.left);
+		PostOrder(root.right);
+		// Work is Print the root Node Value
+		System.out.print(root.data+" ");
+	}
+	
+	void Inorder(TreeNode root) {
+		if(root==null) {
+			return;
+		}
+		
+		Inorder(root.left);
+		// Work is Print the root Node Value
+		System.out.print(root.data+" ");
+		Inorder(root.right);
+	}
+	
+	void preOrder(TreeNode root) {
 		if(root==null) {
 			return;
 		}
