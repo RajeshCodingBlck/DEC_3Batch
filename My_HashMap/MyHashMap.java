@@ -6,6 +6,9 @@ public class MyHashMap {
     
 	 LinkedList<Entry> [] arr;
 	 
+	 private int count=0; 
+	 private double load_factor=0.5;
+	 
 	 MyHashMap(){
 		 
 		 arr= new LinkedList [5];
@@ -49,12 +52,43 @@ public class MyHashMap {
 				 }
 			 }
 		 }else {
+			 count++;
 			 Entry e= new Entry(key, value);
 			 list.addLast(e);
 		 }
+		 
+		 double curr_load= (1.0 *count)/arr.length;
+		 
+		 if(curr_load> load_factor){
+			 rehashing();
+		 }
+		 
 	 }
 	 
-	 public int get(String key) {
+	 private void rehashing() {
+		// TODO Auto-generated method stub
+		count=0;
+		LinkedList<Entry>[] old_arr= arr;
+		arr= new LinkedList[2*old_arr.length];
+		
+		for(int i=0; i<arr.length;i++) {
+			arr[i]=new LinkedList();
+		}
+		
+		for(int i=0; i<old_arr.length;i++) {
+			LinkedList<Entry> old_list= old_arr[i];
+			
+			for(Entry e : old_list) {
+				
+				put(e.key, e.value);
+			}
+			
+		}
+		
+		
+	 }
+
+	public int get(String key) {
 		 
 		 int index= hashFunction(key);
 		 LinkedList<Entry> list= arr[index];
