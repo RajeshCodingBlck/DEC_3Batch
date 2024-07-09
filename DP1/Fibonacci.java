@@ -10,14 +10,15 @@ public class Fibonacci {
 			return n;
 		}
 		
-		if(brain.containsKey(n)) {
-			 return brain.get(n);
+		if(brain.containsKey(n)) { // check and fetch
+			return brain.get(n);
 		}
-		System.out.println(n);
+		
+		System.out.println(" n is "+n );
 		int chhota_ans1= fibo(n-1, brain);
 		int chhota_ans2=fibo(n-2, brain);
 		int mera_ans= chhota_ans1+chhota_ans2;
-		brain.put(n, mera_ans);
+		brain.put(n, mera_ans); // Store
 		return mera_ans;
 		
 	}
